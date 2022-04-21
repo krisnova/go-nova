@@ -35,7 +35,7 @@ type AppOptions struct {
 func main() {
 	/* Change version to -V */
 	cli.VersionFlag = &cli.BoolFlag{
-		Name:    "print-version",
+		Name:    "version",
 		Aliases: []string{"V"},
 		Usage:   "The version of the program.",
 	}
