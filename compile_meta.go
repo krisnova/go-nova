@@ -13,6 +13,7 @@
  *                       This machine kills fascists.
  *
 \*===========================================================================*/
+
 package nova
 
 import "fmt"
