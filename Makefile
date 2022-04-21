@@ -26,8 +26,8 @@ copyright   =  Copyright (c) $(year)
 
 compile: ## Compile for the local architecture ⚙
 	@echo "Compiling..."
-	go build -ldflags \
-	"-X 'github.com/$(org)/$(target).Version=$(version)' \
+	go build -ldflags "\
+	-X 'github.com/$(org)/$(target).Version=$(version)' \
 	-X 'github.com/$(org)/$(target).AuthorName=$(authorname)' \
 	-X 'github.com/$(org)/$(target).AuthorEmail=$(authoremail)' \
 	-X 'github.com/$(org)/$(target).Copyright=$(copyright)' \
@@ -36,7 +36,7 @@ compile: ## Compile for the local architecture ⚙
 	-o $(target) cmd/*.go
 
 install: ## Install the program to /usr/bin 🎉
-	@echo "Installing to /usr/bin/..."
+	@echo "Installing..."
 	sudo cp $(target) /usr/bin/$(target)
 
 test: clean compile install ## 🤓 Run go tests
@@ -45,7 +45,7 @@ test: clean compile install ## 🤓 Run go tests
 
 clean: ## Clean your artifacts 🧼
 	@echo "Cleaning..."
-	rm -rf release
+	rm -rvf release/*
 
 .PHONY: release
 release: ## Make the binaries for a GitHub release 📦

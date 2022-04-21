@@ -18,6 +18,15 @@ package nova
 
 import "fmt"
 
+var (
+	Name        string
+	Version     string
+	Copyright   string
+	License     string
+	AuthorName  string
+	AuthorEmail string
+)
+
 func Banner() string {
 	var banner string
 	banner += fmt.Sprintf("\n")
@@ -29,14 +38,6 @@ func Banner() string {
 	banner += fmt.Sprintf(" ┃   ██║ ╚████║╚██████╔╝ ╚████╔╝ ██║  ██║ ┃\n")
 	banner += fmt.Sprintf(" ┃   ╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝ ┃\n")
 	banner += fmt.Sprintf(" ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n")
+	banner += fmt.Sprintf("  Version : %s Author: %s\n", Version, AuthorName)
 	return banner
 }
-
-var (
-	Name        string
-	Version     string
-	Copyright   string
-	License     string
-	AuthorName  string
-	AuthorEmail string
-)

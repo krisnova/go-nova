@@ -14,7 +14,7 @@
  *                                                                           *
 \*===========================================================================*/
 
-package nova
+package service
 
 import (
 	"github.com/kris-nova/go-nova/pkg/api"
