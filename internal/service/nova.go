@@ -45,7 +45,6 @@ func (n *Nova) Run() error {
 	for runtimeNova == true {
 		time.Sleep(1 * time.Second)
 		logrus.Infof("Sleeping...\n")
-
 	}
 	return nil
 }

@@ -38,6 +38,6 @@ func Banner() string {
 	banner += fmt.Sprintf(" ┃   ██║ ╚████║╚██████╔╝ ╚████╔╝ ██║  ██║ ┃\n")
 	banner += fmt.Sprintf(" ┃   ╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝ ┃\n")
 	banner += fmt.Sprintf(" ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\n")
-	banner += fmt.Sprintf("  Version : %s Author: %s\n", Version, AuthorName)
+	banner += fmt.Sprintf("  Version: %s Author: %s\n", Version, AuthorName)
 	return banner
 }
