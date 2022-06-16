@@ -17,7 +17,6 @@
 package main
 
 import (
-	"fmt"
 	"github.com/kris-nova/nova"
 	"github.com/kris-nova/nova/internal/service"
 	"github.com/sirupsen/logrus"
@@ -67,15 +66,6 @@ A longer sentence, about how exactly to use this program`,
 		EnableBashCompletion: true,
 		HideHelp:             false,
 		HideVersion:          false,
-		Before: func(c *cli.Context) error {
-			Preloader()
-			fmt.Fprintf(c.App.Writer, nova.Banner())
-			return nil
-		},
-		After: func(c *cli.Context) error {
-			// Destruct
-			return nil
-		},
 		Action: func(c *cli.Context) error {
 
 			//
@@ -85,7 +75,25 @@ A longer sentence, about how exactly to use this program`,
 
 		},
 	}
-	app.Run(os.Args)
+
+	var err error
+
+	// Load environment variables
+	err = Environment()
+	if err != nil {
+		logrus.Error(err)
+		os.Exit(99)
+	}
+
+	// Arbitrary (non-error) pre load
+	Preloader()
+
+	// Runtime
+	err = app.Run(os.Args)
+	if err != nil {
+		logrus.Error(err)
+		os.Exit(-1)
+	}
 }
 
 // Preloader will run for ALL commands, and is used
