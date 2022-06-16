@@ -16,14 +16,14 @@
 
 all: compile
 
-version     =  0.0.1
-target      =  nova
-org         =  kris-nova
-authorname  =  Kris Nóva
-authoremail =  kris@nivenly.com
-license     =  MIT
-year        =  2022
-copyright   =  Copyright (c) $(year)
+version     ?=  0.0.1
+target      ?=  nova
+org         ?=  kris-nova
+authorname  ?=  Kris Nóva
+authoremail ?=  kris@nivenly.com
+license     ?=  MIT
+year        ?=  2022
+copyright   ?=  Copyright (c) $(year)
 
 compile: ## Compile for the local architecture ⚙
 	@echo "Compiling..."
